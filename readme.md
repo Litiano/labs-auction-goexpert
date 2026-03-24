@@ -31,3 +31,16 @@ Códigos de Status:
 |--------|-----------|
 | 0      | Active    |
 | 1      | Completed |
+
+#### 5 - Executar teste:
+No env de testes o fechamento foi definido para 3 segundos.\
+O teste aguarda 4 segundos e verifica.
+
+```shell
+docker compose run \
+  --rm \
+  --env-from-file cmd/auction/testing.env \
+  --entrypoint go \
+  app \
+  test -v .
+```
